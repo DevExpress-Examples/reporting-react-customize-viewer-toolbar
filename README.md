@@ -58,45 +58,46 @@ To add a new toolbar command, follow the steps below:
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24">
         <polygon className="dxd-icon-fill" points="4,2 4,22 22,12 " />
       </svg>
+    ));
     // ...
     ```
 
 2. Specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's id (`slideshow`):
 
-    ```ts
-    const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
+  ```ts
+  const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
     let interval: any;
     const action = new CustomAction({
-        text: "Run Slide Show",
-        imageTemplateName: "slideshow",
-        visible: true,
-        disabled: false,
-        selected: false,
-        clickAction: function () {
+      text: "Run Slide Show",
+      imageTemplateName: "slideshow",
+      visible: true,
+      disabled: false,
+      selected: false,
+      clickAction: function () {
         if (this.selected) {
-            clearInterval(interval);
-            this.selected = false;
-            return;
+          clearInterval(interval);
+          this.selected = false;
+          return;
         }
         var model = sender.GetPreviewModel();
         if (model) {
-            this.selected = true;
-            interval = setInterval(function () {
-                var pageIndex = model.GetCurrentPageIndex();
-                model.GoToPage(pageIndex + 1);
-            }, 2000);
+          this.selected = true;
+          interval = setInterval(function () {
+            var pageIndex = model.GetCurrentPageIndex();
+            model.GoToPage(pageIndex + 1);
+          }, 2000);
         }
-        }
+      }
     });
     // ...
-    };
-    ```
+  };
+  ```
 
 3. Call the `push` method to add the created command to `Actions` collection:
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
-        args.Actions.push(action);
+      args.Actions.push(action);
     };
     ```
     
@@ -108,7 +109,6 @@ To add a new toolbar command, follow the steps below:
 
 - [Reporting for React](https://docs.devexpress.com/XtraReports/119338)
 - [Customize the Document Viewer Toolbar](https://docs.devexpress.com/XtraReports/401946)
-
 
 ## More Examples
 
