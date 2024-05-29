@@ -1,10 +1,10 @@
 <!-- default badges list -->
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1026838)
+[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1235063)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 # Reporting for React - Customize Viewer Toolbar
 
-This example Use the `CustomizeMenuActions` callback to hide the existing **Highlight Editing Fields** toolbar command and add a new **Run Slide Show** command to navigate through report pages.
+This example uses the `CustomizeMenuActions` event to hide the **Highlight Editing Fields** toolbar command and add a new **Run Slide Show** command to navigate through report pages.
 
 ![Web Document Viewer - Customized Toolbar](images/screenshot.png)
 
