@@ -64,34 +64,34 @@ To add a new toolbar command, follow the steps below:
 
 2. Specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's id (`slideshow`):
 
-  ```ts
-  const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
-    let interval: any;
-    const action = new CustomAction({
-      text: "Run Slide Show",
-      imageTemplateName: "slideshow",
-      visible: true,
-      disabled: false,
-      selected: false,
-      clickAction: function () {
-        if (this.selected) {
-          clearInterval(interval);
-          this.selected = false;
-          return;
+    ```ts
+    const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
+      let interval: any;
+      const action = new CustomAction({
+        text: "Run Slide Show",
+        imageTemplateName: "slideshow",
+        visible: true,
+        disabled: false,
+        selected: false,
+        clickAction: function () {
+          if (this.selected) {
+            clearInterval(interval);
+            this.selected = false;
+            return;
+          }
+          var model = sender.GetPreviewModel();
+          if (model) {
+            this.selected = true;
+            interval = setInterval(function () {
+              var pageIndex = model.GetCurrentPageIndex();
+              model.GoToPage(pageIndex + 1);
+            }, 2000);
+          }
         }
-        var model = sender.GetPreviewModel();
-        if (model) {
-          this.selected = true;
-          interval = setInterval(function () {
-            var pageIndex = model.GetCurrentPageIndex();
-            model.GoToPage(pageIndex + 1);
-          }, 2000);
-        }
-      }
-    });
-    // ...
-  };
-  ```
+      });
+      // ...
+    };
+    ```
 
 3. Call the `push` method to add the created command to `Actions` collection:
 
