@@ -49,7 +49,7 @@ const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) =>
 
 To add a new toolbar command, follow the steps below:
 
-1. Create an image template (in this example, id = "slideshow"):
+1. Create an image template:
 
     ```ts
     // ...
@@ -61,7 +61,7 @@ To add a new toolbar command, follow the steps below:
     // ...
     ```
 
-2. Specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to `slideshow`:
+2. Specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's id (`slideshow`):
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
@@ -92,13 +92,14 @@ To add a new toolbar command, follow the steps below:
     };
     ```
 
-3. Call the `push` method to add the created command to the event argument's `Actions` collection:
+3. Call the `push` method to add the created command to `Actions` collection:
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
-    args.Actions.push(action);
+        args.Actions.push(action);
     };
     ```
+    
 ## Files to Review
 
 - [page.tsx](react-documenent-viewer/src/app/page.tsx)
