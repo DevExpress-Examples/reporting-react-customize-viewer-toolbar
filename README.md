@@ -97,6 +97,7 @@ To add a new toolbar command, follow the steps below:
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
+      // ...
       args.Actions.push(action);
     };
     ```
