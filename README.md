@@ -65,7 +65,7 @@ To add a new toolbar command, follow the steps below:
     // ...
     ```
 
-2. Create a new `CustomAction` and specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's id (`slideshow`):
+2. Create a new `CustomAction` and specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's ID (`slideshow`):
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
