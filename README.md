@@ -4,7 +4,10 @@
 <!-- default badges end -->
 # Reporting for React - Customize Viewer Toolbar
 
-This example uses the `CustomizeMenuActions` event to hide the **Highlight Editing Fields** toolbar command and add a new **Run Slide Show** command to navigate through report pages.
+This example uses the `CustomizeMenuActions` event to make the following changes in the viewer toolbar: 
+
+- Hide the **Highlight Editing Fields** command.
+- Add a new **Run Slide Show** command.
 
 ![Web Document Viewer - Customized Toolbar](images/screenshot.png)
 
@@ -29,11 +32,11 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000/` in your browser to view the result. 
+Enter the following URL in your browser to view the result: `http://localhost:3000/`. 
 
 ## Implementation Details
 
-### Hide Toolbar Command
+### Hide a Toolbar Command
 
 To access a built-in toolbar command, call the `GetById` method and pass the [`ActionId`](https://docs.devexpress.com/XtraReports/js-DevExpress.Reporting.Viewer.ActionId) value as a parameter. To hide a command and its toolbar button, set the command's `visible` property to `false`.
 
@@ -45,7 +48,7 @@ const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) =>
 };
 ```
 
-### Add New Toolbar Command
+### Add a New Toolbar Command
 
 To add a new toolbar command, follow the steps below:
 
@@ -62,7 +65,7 @@ To add a new toolbar command, follow the steps below:
     // ...
     ```
 
-2. Specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's id (`slideshow`):
+2. Create a new `CustomAction` and specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's id (`slideshow`):
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
