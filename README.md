@@ -5,7 +5,7 @@
 <!-- default badges end -->
 # Reporting for React - Customize Viewer Toolbar
 
-This example uses the `CustomizeMenuActions` event to make the following changes in the viewer toolbar: 
+This example uses the `CustomizeMenuActions` event to make the following changes to the Document Viewer toolbar:
 
 - Hide the **Highlight Editing Fields** command.
 - Add a new **Run Slide Show** command.
@@ -22,7 +22,7 @@ In the *backend* folder, run the following command:
 dotnet run
 ```
 
-The server starts at `http://localhost:5000`. To debug the server, run the application in Visual Studio.
+The server uses `http://localhost:5000`. To debug the server, run the application within Visual Studio.
 
 ### Client
 
@@ -33,7 +33,7 @@ npm install
 npm run dev
 ```
 
-Enter the following URL in your browser to view the result: `http://localhost:3000/`. 
+Enter the following URL in your browser to view results: `http://localhost:3000/`. 
 
 ## Implementation Details
 
@@ -66,7 +66,7 @@ To add a new toolbar command, follow the steps below:
     // ...
     ```
 
-2. Create a new `CustomAction` and specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the created template's ID (`slideshow`):
+2. Create a new `CustomAction` and specify command settings. Set the [`imageTemplateName`](https://docs.devexpress.com/XtraReports/js-DevExpress.Analytics.Utils.IAction?p=netframework#js_devexpress_analytics_utils_iaction_imagetemplatename) property to the generated template's ID (`slideshow`):
 
     ```ts
     const onCustomizeMenuActions = ({ sender, args }: { sender: any, args: any }) => {
