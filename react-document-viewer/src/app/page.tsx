@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ReportViewer, { Callbacks, RequestSettings } from 'devexpress-reporting-react/dx-report-viewer';
+import ReportViewer, { Callbacks, RequestOptions } from 'devexpress-reporting-react/dx-report-viewer';
 import { TemplateEngine } from 'devexpress-reporting-react/dx-report-viewer/core/template-engine';
 import { ActionId } from 'devexpress-reporting/viewer/constants';
 import { CustomAction } from 'devexpress-reporting/dx-webdocumentviewer';
@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
       <ReportViewer reportUrl="Report" templateEngine={templateEngine}>
-        <RequestSettings invokeAction="/DXXRDV" host="http://localhost:5000" />
+        <RequestOptions invokeAction="/DXXRDV" host="http://localhost:5000" />
         <Callbacks CustomizeMenuActions={React.useCallback(onCustomizeMenuActions,[])} />
       </ReportViewer>
   );
