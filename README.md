@@ -108,7 +108,7 @@ To add a new toolbar command, follow the steps below:
     
 ## Files to Review
 
-- [page.tsx](react-documenent-viewer/src/app/page.tsx)
+- [page.tsx](react-document-viewer/src/app/page.tsx)
 
 ## Documentation
 
